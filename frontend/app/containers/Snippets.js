@@ -2,19 +2,29 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 const Snippets = React.createClass({
-  getInitialState: function(){
-    return {
-      snippets: {snippet1: "<div>THis is the first snippet</div>"}
-    }
+
+
+
+
+  snippetsInnerHtml: function(){
+
   },
 
-  snippetsInnerHtml: function()
 
+  snippetsContainer: function(){
+    var snipCont = document.querySelector('snippets-container');
+    console.log(snipCont);
+    // snipCont.innerHTML = snippets[0]
+  },
 
   render: function(){
     return(
-      <div className:"snippets-container">
-      <div>
+      <div className="snippets-container">
+        
+      </div>
+
     )
   }
 })
+
+export default Snippets;

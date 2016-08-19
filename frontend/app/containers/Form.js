@@ -1,8 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Snippets from './Snippets.js';
 
 
 const Form = React.createClass({
+
+  componentWillMount(){
+      console.log(this.props.snippets);
+  },
+
   render: function(){
     var style = {
       align: "vertical"
@@ -17,8 +23,10 @@ const Form = React.createClass({
           <input type="checkbox" value={1} /><p>HelloCheckbox</p> <br />
           <input type="checkbox" value={1} /><p>HelloCheckbox</p>
         </form>
-        <button>Submit</button>
+        <button onClick="">Submit</button>
+        <Snippets snippets={this.props.snippets}/>
       </div>
+
     )
   }
 })

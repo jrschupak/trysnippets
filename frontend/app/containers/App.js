@@ -10,7 +10,7 @@ const App = React.createClass({
 
   getInitialState: function(){
     return{
-      snippets: {snippetArr: ["<div>THis is the first snippet</div>", "<div>This is the second snippet</div>"] }
+      snippets: {snippetArr: [{id:1, snippet:"<div>THis is the first snippet</div>"}, {id:2, snippet: "<div>This is the second snippet</div>"}] }
     }
   },
 
@@ -22,7 +22,7 @@ const App = React.createClass({
 
     // styling can go here
     return (
-      <Forms snippets={this.state.snippets.snippetArr}/>
+      <Forms snippets={this.state.snippets}/>
     )
   }
 });

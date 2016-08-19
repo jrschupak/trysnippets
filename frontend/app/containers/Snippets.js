@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 
 const Snippets = React.createClass({
 
-
-
+  componentWillMount(){
+    console.log(this.props.snippets);
+  },
 
   snippetsInnerHtml: function(){
 
@@ -19,8 +20,12 @@ const Snippets = React.createClass({
 
   render: function(){
     return(
-      <div className="snippets-container">
-        
+      <div className="snippets-container">{this.props.snippets.snippetArr.map(function(placeData) {
+              console.log(placeData);
+              return <div  key={placeData.id} className='zip-comp'>
+                        <p>{placeData.snippet}</p>
+                     </div>
+              })}
       </div>
 
     )

@@ -5,10 +5,12 @@ const Snippets = React.createClass({
 
   componentWillMount(){
     console.log(this.props.snippets);
+
   },
 
-  snippetsInnerHtml: function(){
+  
 
+  snippetsInnerHtml: function(){
   },
 
 

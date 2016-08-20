@@ -7,6 +7,8 @@ const Form = React.createClass({
 
   componentWillMount(){
       console.log(this.props.snippets);
+      var checkboxes = document.querySelectorAll('input');
+      console.log(checkboxes);
   },
 
   render: function(){
@@ -16,17 +18,14 @@ const Form = React.createClass({
 
     return(
       <div className="col-sm-12" style={style}>
-        <form>
+        <form className="checkboxes">
+          <input type="checkbox" value={0} /><p>HelloCheckbox</p> <br />
           <input type="checkbox" value={1} /><p>HelloCheckbox</p> <br />
-          <input type="checkbox" value={1} /><p>HelloCheckbox</p> <br />
-          <input type="checkbox" value={1} /><p>HelloCheckbox</p> <br />
-          <input type="checkbox" value={1} /><p>HelloCheckbox</p> <br />
-          <input type="checkbox" value={1} /><p>HelloCheckbox</p>
         </form>
-        <button onClick="">Submit</button>
+
+        <button onClick={this.props.isChecked}>Submit</button>
         <Snippets snippets={this.props.snippets}/>
       </div>
-
     )
   }
 })

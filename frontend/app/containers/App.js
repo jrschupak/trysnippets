@@ -13,7 +13,7 @@ const App = React.createClass({
       snippets: {snippetArr: [{id:0, snippet:"<div>THis is the first snippet</div>"}, {id:1, snippet: "<div>This is the second snippet</div>"}] },
       checkedBoxArr: [],
       checkboxes: '',
-      displaySnippets: {}
+      displaySnippets: []
     }
   },
 
@@ -35,20 +35,22 @@ const App = React.createClass({
       if(this.state.checkboxes[i].checked === true){
         console.log("isChecked function");
         this.state.checkedBoxArr.push(this.state.checkboxes[i].value);
-        console.log(this.state.checkedBoxArr);
+        console.log("checkboxarr ", this.state.checkedBoxArr);
       }
     }
     for(var i = 0; i < this.state.checkedBoxArr.length; i++){
       console.log("checkedBoxArr[i] ", this.state.checkedBoxArr[i]);
-      for(var j = 0; j < this.state.snippets.snippetArr.length; i++){
+      for(var j = 0; j < this.state.snippets.snippetArr.length; j++){
         console.log("snippets[j] ", this.state.snippets.snippetArr[j]);
-        if(this.state.checkedBoxArr[i] === this.state.snippets.snippetArr[j].id){
-          this.state.displaySnippets.push(this.state.snippets[j])
+        if(this.state.checkedBoxArr[i] == this.state.snippets.snippetArr[j].id){
+          this.state.displaySnippets.push(this.state.snippets.snippetArr[j]);
         }
       }
     }
+    this.setState({
+      displaySnippets: this.state.displaySnippets
+    })
     return console.log(this.state.displaySnippets);
-
   },
   // componentWillMount(){
   //   console.log(this.state.snippets.snippetArr[0]);
@@ -60,7 +62,7 @@ const App = React.createClass({
 
     // styling can go here
     return (
-      <Forms snippets={this.state.snippets}  isChecked={this.isChecked}/>
+      <Forms snippets={this.state.displaySnippets}  isChecked={this.isChecked}/>
     )
   }
 });

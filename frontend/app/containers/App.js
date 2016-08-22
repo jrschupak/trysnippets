@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Loader from 'react-loader';
+import Title from './Title.js';
 import Forms from './Form.js';
 
 
@@ -10,7 +11,7 @@ const App = React.createClass({
 
   getInitialState: function(){
     return{
-      snippets: {snippetArr: [{id:0, snippet:"<div>THis is the first snippet</div>"}, {id:1, snippet: "<div>This is the second snippet</div>"}] },
+      snippets: {snippetArr: [{id:0, snippet:"<div>This is the first snippet of code</div>"}, {id:1, snippet: "<div>This is the second snippet</div>"}] },
       checkedBoxArr: [],
       checkboxes: '',
       displaySnippets: []
@@ -60,11 +61,28 @@ const App = React.createClass({
 
   render: function() {
 
-    // styling can go here
+    var style = {
+      background: "black"
+    }
+
     return (
-      <Forms snippets={this.state.displaySnippets}  isChecked={this.isChecked}/>
+      <Forms style={style} snippets={this.state.displaySnippets}  isChecked={this.isChecked}/>
     )
   }
 });
 
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

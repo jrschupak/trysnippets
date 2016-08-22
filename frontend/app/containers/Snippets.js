@@ -21,8 +21,15 @@ const Snippets = React.createClass({
   },
 
   render: function(){
+
+    var snippet = {
+      color: "yellow",
+      position: "absolute",
+      left: "10px",
+      top: "300px"
+    }
     return(
-      <div className="snippets-container">{this.props.snippets.map(function(placeData) {
+      <div className="snippets-container" style={snippet}>{this.props.snippets.map(function(placeData) {
               console.log(placeData);
               return <div  key={placeData.id} className='zip-comp'>
                         <p>{placeData.snippet}</p>
